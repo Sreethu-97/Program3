@@ -1,0 +1,27 @@
+#1.TRAINING
+
+#LOAD DATA
+from sklearn.datasets import load_iris
+iris=load_iris()
+x=iris.data
+y=iris.target
+#ALGORITHM
+from sklearn.naive_bayes import GaussianNB
+ML1=GaussianNB()
+from sklearn.naive_bayes import MultinomialNB
+ML2=MultinomialNB()
+from sklearn.naive_bayes import BernoulliNB
+ML3=BernoulliNB()
+#FIT DATA
+ML1=ML1.fit(x,y)
+ML2=ML2.fit(x,y)
+ML3=ML3.fit(x,y)
+
+#2.TESTING
+
+result1=ML1.predict([[3.5,3.5,3.5,3.5 ]])
+print("Prediction using GUASSIAN NB=",result1)
+result2=ML2.predict([[3.5,3.5,3.5,3.5 ]])
+print("Prediction using MULTINOMIAL NB=",result2)
+result3=ML3.predict([[3.5,3.5,3.5,3.5 ]])
+print("Prediction using BERNOULLI NB=",result3)
